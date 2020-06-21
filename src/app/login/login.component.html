@@ -1,0 +1,12 @@
+<nb-card accent="info">
+    <nb-card-header>
+        Login
+      </nb-card-header>
+    <nb-card-body >
+        <input type="email" nbInput placeholder="email" [formControl]="email" fullWidth >
+        <div *ngIf="(!email.value.trim() || email.errors) && (email.dirty || email.touched)" class="invalid">please enter valid email</div>
+        <input type="password" nbInput placeholder="password" [formControl]="password" fullWidth>
+        <div *ngIf="(!password.value.trim() || password.errors) && (password.dirty || password.touched)" class="invalid">please enter valid password</div>
+        <button nbButton outline status="info" (click)="login()">login</button>
+      </nb-card-body>
+</nb-card>

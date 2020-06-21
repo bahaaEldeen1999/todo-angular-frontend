@@ -1,0 +1,20 @@
+*{
+    transition: all ease-in-out .2s;
+}
+.done{
+    text-decoration: line-through;
+    color: #8f9bb3;
+}
+nb-list-item{
+    cursor: pointer;
+    display: block;
+}
+nb-list-item:hover{
+    background-color: #f2f6ff;
+}
+input{
+    margin-bottom: 10px;
+}
+.invalid{
+    color:#ff3d71
+}

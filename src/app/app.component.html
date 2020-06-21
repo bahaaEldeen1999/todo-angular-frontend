@@ -1,0 +1,28 @@
+<nb-layout>
+
+
+
+  <nb-layout-column>
+
+    <nb-layout>
+    
+      <nb-layout-header fixed>
+        <div >
+          <a routerLink="/login" nbButton *ngIf="!checkLocalStorage('token')">login</a>
+          <a routerLink="/signup" nbButton *ngIf="!checkLocalStorage('token')" >signup</a>
+          <a (click)="logout()" nbButton *ngIf="checkLocalStorage('token')" >logout</a>
+        </div>
+      </nb-layout-header>
+    
+      <nb-layout-column>
+        <router-outlet></router-outlet>
+      </nb-layout-column>
+    
+
+    
+    </nb-layout>
+  </nb-layout-column>
+
+
+
+</nb-layout>

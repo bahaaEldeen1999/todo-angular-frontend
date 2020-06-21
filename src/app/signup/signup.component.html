@@ -1,0 +1,14 @@
+<nb-card accent="info">
+    <nb-card-header>
+        Signup
+      </nb-card-header>
+    <nb-card-body >
+        <input type="text" nbInput placeholder="name" [formControl]="name" fullWidth >
+        <div *ngIf="(!name.value.trim() || name.errors) && (name.dirty || name.touched)" class="invalid">please enter valid name</div>
+        <input type="email" nbInput placeholder="email" [formControl]="email" fullWidth >
+        <div *ngIf="(!email.value.trim() || email.errors) && (email.dirty || email.touched)" class="invalid">please enter valid email</div>
+        <input type="password" nbInput placeholder="password" [formControl]="password" fullWidth  >
+        <div *ngIf="(!password.value.trim() || password.errors) && (password.dirty || password.touched)" class="invalid">please enter valid password</div>
+        <button nbButton outline status="info" (click)="signup()">signup</button>
+      </nb-card-body>
+</nb-card>

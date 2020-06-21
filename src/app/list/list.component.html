@@ -1,0 +1,31 @@
+<nb-layout-header> <span>welcome </span> <span style="margin-left: 10px;color: #0095ff;font-weight: bold;" >{{name}}</span></nb-layout-header>
+
+<nb-card accent="info">
+    <nb-card-header>
+        add To-Do item
+      </nb-card-header>
+    <nb-card-body >
+        <input type="text" nbInput placeholder="add item" [formControl]="item" (keyup.enter)="addItem()" fullWidth>
+        <div *ngIf="(!item.value.trim() || item.errors) && (item.dirty || item.touched)" class="invalid">please enter non-empty task</div>
+        <button nbButton outline status="info" (click)="addItem()">add</button>
+        <div >
+
+   
+  </div>
+
+      </nb-card-body>
+</nb-card>
+
+    <nb-card  >
+        
+        <nb-card-header>
+            To-Do
+          </nb-card-header>
+         
+    <nb-list [nbSpinner]="!loaded" nbSpinnerStatus="info">
+        <nb-list-item *ngFor="let item of list;let i = index" [class]="item.done?'done':''" (click)="done(i)">
+          <span > {{ item.text }}</span>
+        <span style="float: right;">  <nb-icon icon="trash-2-outline" (click)="deleteItem($event,i);$event.stopPropagation()" status="danger"></nb-icon></span>
+            </nb-list-item>
+    </nb-list>
+    </nb-card>
